@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  http-perf-tester:
+    build:
+      context: ./docker
+      dockerfile: ./Dockerfile
+    image: http-perf-tester
+    environment:
+      TARGET_HOST: https://test.io
+    volumes:
+      - ./:/opt/app
+    ports:
+      - 8089:8089
